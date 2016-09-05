@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>DropMenu</title>
+	<style>
+	/* 视觉样式 */
+		body, ul, li, p {
+			margin: 0;
+			padding: 0;
+		}
+
+		.multi-drop-menu {
+			font:1em helvetica, arial, sans-serif;
+		}
+
+		.multi-drop-menu a {
+			display: block;
+			color: #555;
+			background: #eee;
+			padding: .2em 1em;
+			border-width: 3px;
+			margin-left: 2px;
+		}
+
+		.multi-drop-menu li:hover > a {
+			color: #fff;
+			background: #aaa;
+		}
+
+		.multi-drop-menu a:active {
+			color: #ccc;
+			background: #fff;
+		}
+
+	/* 功能样式 */
+		.multi-drop-menu ul {
+			float: left;
+		}
+
+		.multi-drop-menu li {
+			list-style: none;
+			float: left;
+			position: relative;
+		}
+
+		.multi-drop-menu li a {
+			text-decoration: none;
+			background-clip: padding-box;
+		}
+
+	/* 二级下拉菜单 */
+		.multi-drop-menu li ul {
+			width: 9em;
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			margin-top: 2px;
+		}
+		
+		.multi-drop-menu li li {
+			float: none;
+		}
+
+		.multi-drop-menu li li a {
+			margin-top: 2px;
+			border-right-style: none;
+		}
+
+		.multi-drop-menu li li:first-child a {
+			margin-top: 0;
+		} 
+
+		.multi-drop-menu li:hover > ul {
+			display: block;
+		}
+
+		/* 三级菜单 */
+		.multi-drop-menu li li ul {
+			position: absolute;
+			top: 0;
+			left: 100%;
+			margin-top: 0;
+		}
+
+	/* 重用  让顶级菜单可以垂直显示 */
+		.multi-drop-menu.vertical {
+			width: 8em;
+		}
+
+		.multi-drop-menu.vertical li a {
+			margin-top: 2px;
+		}
+
+		.multi-drop-menu.vertical li li:first-child a {
+			margin-top: 0;
+		}
+
+		.multi-drop-menu.vertical ul,
+		.multi-drop-menu.vertical li {
+			/* 让顶级菜单垂直显示 */
+			float: none;
+		}
+
+		.multi-drop-menu.vertical li ul {
+			left: 100%;
+			top: 0;
+			margin-top: 0;
+			margin-left: 2px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="multi-drop-menu">
+		<!-- 一级开始 -->
+		<ul>
+			<li><a href="#">Power</a></li>
+			<li><a href="#">Money</a></li>
+			<li><a href="#">Love</a></li>
+			<li><a href="#">Fame</a>
+				<!-- 二级开始 -->
+				<ul>
+					<li><a href="#">Sports Star</a></li>
+					<li><a href="#">Move Star</a></li>
+					<li><a href="#">Rock Star</a>
+						<!-- 三级开始 -->
+						<ul>
+							<li><a href="#">Bruce Springsteen</a></li>
+							<li><a href="#">Bono</a></li>
+							<li><a href="#">Mick Jagger</a></li>
+							<li><a href="#">Bob Dylan</a></li>
+						</ul>
+						<!-- 三级结束 -->
+					</li>
+				</ul>
+				<!-- 二级结束 -->
+			</li>
+		</ul>
+		<!-- 一级结束 -->
+	</nav>
+</body>
+</html>
